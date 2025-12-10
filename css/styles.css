@@ -1,0 +1,246 @@
+:root{
+  /* DOURADO RL IMÓVEIS */
+  --color-primary-50:#FFF8E6;
+  --color-primary-100:#FFE7A3;
+  --color-primary-200:#FDD676;
+  --color-primary-300:#F2C266;
+  --color-primary-400:#E8AE46;
+  --color-primary-500:#D89A2B;
+  --color-primary-600:#B57B1E;
+  --color-primary-700:#8C5C15;
+  --color-primary-800:#5C3A0C;
+  --color-primary-900:#3A2407;
+
+  /* FUNDOS E TEXTO */
+  --color-surface:#050608;
+  --color-surface-elev:#101218;
+  --color-border:#272A33;
+  --color-text:#F5F6FA;
+  --color-text-muted:#A3A7B4;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+
+  --space-1:.5rem;
+  --space-2:1rem;
+  --space-3:1.5rem;
+  --space-4:2rem;
+  --space-5:3rem;
+
+  --container:1100px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--color-text);
+  background:
+    radial-gradient(circle at top, #1D1F24 0, transparent 60%),
+    radial-gradient(circle at bottom, #12131A 0, transparent 55%),
+    #050608;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 var(--space-2);
+}
+
+.main-container{
+  padding-top:var(--space-4);
+}
+
+/* TIPOGRAFIA */
+
+h1,h2,h3{
+  margin:0 0 var(--space-2);
+  line-height:1.25;
+}
+
+h1{
+  font-size:clamp(1.8rem,3vw,2.2rem);
+}
+
+h2{
+  font-size:clamp(1.4rem,2.4vw,1.8rem);
+}
+
+h3{
+  font-size:clamp(1.1rem,2vw,1.3rem);
+}
+
+p{
+  margin:0 0 var(--space-2);
+}
+
+a{
+  color:var(--color-primary-200);
+  text-decoration:none;
+}
+
+a:hover,
+a:focus{
+  color:var(--color-primary-50);
+  outline:none;
+}
+
+.text-muted{
+  color:var(--color-text-muted);
+}
+
+/* SEÇÕES */
+
+.section-block{
+  padding:var(--space-4) 0;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-weight:600;
+  color:var(--color-primary-100);
+}
+
+.section-title::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg, var(--color-primary-900), transparent);
+}
+
+/* BOTÕES */
+
+.btn{
+  display:inline-block;
+  padding:.55rem 1rem;
+  border-radius:.7rem;
+  border:1px solid var(--color-primary-700);
+  background:transparent;
+  color:var(--color-text);
+  font-size:.95rem;
+  cursor:pointer;
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.btn:hover,
+.btn:focus{
+  transform:translateY(-1px);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  border-color:var(--color-primary-400);
+  outline:none;
+}
+
+.btn:active{
+  transform:translateY(0);
+  box-shadow:none;
+}
+
+.btn-accent{
+  background:linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
+  border-color:var(--color-primary-300);
+  color:#1A1206;
+  font-weight:600;
+}
+
+.btn-accent:hover,
+.btn-accent:focus{
+  background:linear-gradient(135deg, var(--color-primary-500), var(--color-primary-300));
+  border-color:#FFF3C1;
+}
+
+.btn-outline{
+  background:transparent;
+  border-color:var(--color-border);
+}
+
+.btn-small{
+  padding:.45rem .9rem;
+  font-size:.9rem;
+}
+
+.btn-nav{
+  font-size:.9rem;
+}
+
+/* HERO */
+
+.hero{
+  padding-top:var(--space-4);
+}
+
+.hero p{
+  max-width:640px;
+}
+/* =========================
+   RL PREMIUM PACK – BASE
+   (apenas ajustes visuais)
+   ========================= */
+
+/* Rolagem suave entre Início / Imóveis / Cadastro */
+html{
+  scroll-behavior:smooth;
+}
+
+/* Hero mais “premium” com borda dourada suave */
+.hero{
+  border-radius:1.2rem;
+  padding:var(--space-4);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(232,174,70,.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(24,24,24,.8), transparent 60%),
+    var(--color-surface-elev);
+  border:1px solid rgba(232,174,70,.35);
+  box-shadow:0 18px 45px rgba(0,0,0,.7);
+}
+
+/* Destaque no título principal dentro do hero */
+.hero #titulo-site{
+  color:var(--color-primary-50);
+}
+
+/* Linha dourada mais sutil nos títulos de seção */
+.section-title{
+  color:var(--color-primary-100);
+}
+.section-title::after{
+  background:linear-gradient(90deg, rgba(232,174,70,.8), transparent);
+}
+
+/* Texto padrão um pouco mais legível */
+body{
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Links com sublinhado discreto ao passar o mouse */
+a:hover,
+a:focus{
+  text-decoration:underline;
+}
+/* NAV ativa por seção */
+.btn-nav.is-active{
+  background: rgba(232,174,70,.18);
+  border-color: var(--color-primary-400);
+  color: var(--color-primary-50);
+}
+
+/* compensa header sticky ao rolar para âncoras */
+section[id]{
+  scroll-margin-top: 84px; /* ajuste fino se o header mudar de altura */
+}
